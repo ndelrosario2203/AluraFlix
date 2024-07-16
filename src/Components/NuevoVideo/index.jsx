@@ -1,7 +1,20 @@
+import styled from "styled-components"
+import Form from "../Form"
 
-function NuevoVideo() {
+const StyledDiv = styled.div`
+  background: #191919;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  `
+
+function NuevoVideo({crearVideo, categorias}) {
   return (
-    <p>test</p>
+      <StyledDiv >
+        <Form crearVideo = {crearVideo} categorias={categorias}>
+
+        </Form>
+      </StyledDiv>
   )
 }
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import LogoAlura from "../../assets/img/LogoMain.png"
 
 const FooterContainer = styled.footer`
-  background: rgba(0, 0, 0, 0.9);
+  background: linear-gradient(to bottom, rgb(3, 9, 15), rgb(3, 9, 15) 100%);
   color: #fff;
   padding: 40px;
   text-align: center;

@@ -2,9 +2,10 @@ import styled from "styled-components"
 import LogoAlura from "../../assets/img/LogoMain.png"
 import Button from "../Button"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 const StyledHeader = styled.header`
-    background: #000000E5;
+    background: linear-gradient(to bottom, rgb(3, 9, 15), rgb(3, 9, 15) 100%);
     width: 100%;
     height: 125px;
     display: flex;
@@ -23,7 +24,11 @@ const StyledDiv = styled.div`
     margin-left: 40px;
 `
 
-function Header() {
+
+function Header(props) {
+
+
+
     return (
         <StyledHeader>
             <StyledDiv>
@@ -34,10 +39,13 @@ function Header() {
             <StyledDiv style={{ marginRight: "20px", gap: "20px" }}>
 
                 <Link to={`/`}>
-                    <Button texto="HOME" />
+                    <Button texto="HOME"
+                    activo ="true"
+                    />
                 </Link>
                 <Link to={`/crear-video`}>
-                    <Button texto="NUEVO VIDEO" />
+                    <Button texto="NUEVO VIDEO"
+                    />
                 </Link>
             </StyledDiv>
         </StyledHeader>

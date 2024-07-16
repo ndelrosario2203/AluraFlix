@@ -15,18 +15,19 @@ const StyledDiv = styled.div`
 const StyledTitulo = styled.h1`
     color: #F5F5F5;
     font-family: "Roboto";
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 800;
     line-height: 56.25px;
+    white-space: nowrap;
 `
 
 
 function TituloCategoria(props) {
 
-    const {titulo, alturaContainer, anchuraContainer} = props
+    const {titulo, alturaContainer, anchuraContainer, colorPrimario} = props
 
   return (
-    <StyledDiv style={{width: anchuraContainer, height:alturaContainer}}>
+    <StyledDiv style={{width: anchuraContainer, height:alturaContainer, backgroundColor:colorPrimario}}>
         <StyledTitulo>{titulo}</StyledTitulo>
     </StyledDiv>
   )
