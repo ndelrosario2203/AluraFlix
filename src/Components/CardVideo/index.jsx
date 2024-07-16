@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
 `
 
 function CardVideo(props) {
-    const { enlaceVideo, anchura, altura, mostrar, colorPrimario, borrarVideo, id } = props
+    const { enlaceVideo, anchura, altura, mostrar, colorPrimario, borrarVideo, id, cambiarModal } = props
 
     // const colorConvertido = hexToRgba(colorPrimario, 0.2);
 
@@ -23,7 +23,7 @@ function CardVideo(props) {
         <StyledDiv colorPrimario={colorPrimario}>
             <StyledFrame width={anchura} height={altura} src={enlaceVideo} 
                 title="YouTube video player" allowFullScreen></StyledFrame>
-            <FooterVideo mostrar={mostrar} borrarVideo={borrarVideo} id={id}/>
+            <FooterVideo mostrar={mostrar} borrarVideo={borrarVideo} id={id} cambiarModal = {cambiarModal} colorPrimario={colorPrimario}/>
         </StyledDiv>
     )
 }

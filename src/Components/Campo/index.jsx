@@ -7,18 +7,19 @@ const StyledInput = styled.input`
   margin: 10px 0;
   border: 1px solid ${props => props.error ? 'red' : '#333'};
   border-radius: 6px;
-  background-color: var(--Dark-Grey, rgba(38, 38, 38, 1));
+  background-color: transparent;
   color: white;
+  outline: none;
 `;
 
-function Campo({placeHolder, SetTitulo, type, error, setValor}) {
+function Campo({placeHolder, SetTitulo, type, error, setValor, value}) {
 
   const manejarCambios = (e) => {
     setValor(e.target.value);
 }
 
   return (
-    <StyledInput placeholder={placeHolder} type={type} onChange={manejarCambios}>
+    <StyledInput placeholder={placeHolder} type={type} onChange={manejarCambios} value={value}>
     </StyledInput>
   )
 }

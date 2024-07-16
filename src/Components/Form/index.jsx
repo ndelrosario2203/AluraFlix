@@ -4,6 +4,7 @@ import Select from "../Select";
 import Button from "../Button";
 import { useState } from "react";
 import { v4 as uuid } from 'uuid';
+import {  useNavigate } from 'react-router-dom';
 
 const FormContainer = styled.form`
 width:100%;
@@ -15,6 +16,7 @@ width:100%;
   align-items: center;
   height: 100%;
   gap: 7px;
+  
 `;
 
 const Title = styled.h1`
@@ -36,7 +38,7 @@ const SubTitle = styled.p`
 `;
 
 const Label = styled.label`
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans 3", sans-serif;
     font-size: 20px;
     font-weight: 600;
     line-height: 24px;
@@ -85,9 +87,12 @@ const Form = ({ crearVideo, categorias }) => {
     const [enlace, SetEnlace] = useState('');
     const [descripcion, SetDescripcion] = useState('');
     const [enlaceImagen, SetEnlaceImagen] = useState('');
+    const navigate = useNavigate()
 
     const enviarVideos = (e) => {
+        
         e.preventDefault();
+
         let id = uuid();
         let datosAEnviar = {
             id: id,
@@ -98,6 +103,7 @@ const Form = ({ crearVideo, categorias }) => {
             descripcion: descripcion
         }
         crearVideo(datosAEnviar)
+        navigate('/')
     }
 
     return (

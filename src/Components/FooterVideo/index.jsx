@@ -8,8 +8,7 @@ const StyledDiv = styled.div`
     background: rgba(3, 18, 47, 1);
     border-width: 5px;
     border-style: solid;
-    border-color: var(--FrontEnd, rgba(107, 209, 255, 1));
-    box-shadow: 0px -4px 5px 3px rgba(107, 209, 255, 1) inset;
+    border-color: ${props => props.colorPrimario || "#6BD1FF"};
     width: 429px;
     height: 59px;
     gap: 0px;
@@ -35,19 +34,19 @@ const StyledContainer = styled.div`
 
 function FooterVideo(props) {
 
-    const { mostrar = true, borrarVideo, id } = props
+    const { mostrar = true, borrarVideo, id, cambiarModal, colorPrimario } = props
 
     return (
         <>
       {mostrar ? (
-        <StyledDiv>
+        <StyledDiv colorPrimario={colorPrimario}>
           <StyledContainer>
             <RiDeleteBin6Line style={{ color: "white", width: "25.43px", height: "28px", cursor:"pointer" }} onClick={()=>borrarVideo(id)}/>
             <StyledParrafo onClick={()=>borrarVideo(id)}>Borrar</StyledParrafo>
           </StyledContainer>
           <StyledContainer>
-            <AiOutlineEdit style={{ color: "white", width: "25.43px", height: "28px", cursor:"pointer" }} />
-            <StyledParrafo>Editar</StyledParrafo>
+            <AiOutlineEdit style={{ color: "white", width: "25.43px", height: "28px", cursor:"pointer" }} onClick={() => cambiarModal(id)}/>
+            <StyledParrafo onClick={() => cambiarModal(id)}>Editar</StyledParrafo>
           </StyledContainer>
         </StyledDiv>
       ) : null}

@@ -77,7 +77,7 @@ const VideosContainer = styled.div`
     scrollbar-width: thin; /* Grosor de la barra de desplazamiento */
 `
 
-function Banner({videos, categorias, borrarVideo}) {
+function Banner({videos, categorias, borrarVideo, cambiarModal}) {
     return (
         <div>
         <StyledBanner>
@@ -94,7 +94,7 @@ function Banner({videos, categorias, borrarVideo}) {
         {categorias.map((categoria) => 
         <VideosContainer>
         <TituloCategoria titulo={categoria.nombre} anchuraContainer="432px" alturaContainer="70px" colorPrimario = {categoria.color}/>
-        <Videos categoria = {categoria.nombre} videos = {videos} colorPrimario = {categoria.color} borrarVideo={borrarVideo}/>
+        <Videos categoria = {categoria.nombre} videos = {videos} colorPrimario = {categoria.color} borrarVideo={borrarVideo} cambiarModal = {cambiarModal}/>
         </VideosContainer>
             )}
 
